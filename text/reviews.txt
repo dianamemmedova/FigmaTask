@@ -1,0 +1,164 @@
+.reviews-section {
+  padding: 100px 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.reviews-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.reviews-header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.reviews-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a202c;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.reviews-title::after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background: #fdf2e2;
+  border-radius: 50%;
+  right: -15px;
+  top: -5px;
+  z-index: -1;
+}
+
+.reviews-sub {
+  color: #4a5568;
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* Body Layout */
+.reviews-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+/* Sol tərəf qövs sistemi */
+.reviewer-list {
+  position: relative;
+  width: 50%;
+  height: 500px;
+}
+
+.curve-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 180px;
+  z-index: 0;
+}
+
+/* Elementlərin qövs üzrə mövqeyi */
+.reviewer-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mövqelər - Dizayndakı qövsə tam uyğun */
+.item-0 { top: 15%; left: 30px; }
+.item-1 { top: 45%; left: 75px; } /* Ortadakı daha sağdadır */
+.item-2 { top: 75%; left: 20px; }
+
+.img-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid transparent;
+  transition: all 0.5s ease;
+  flex-shrink: 0;
+}
+
+.reviewer-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Aktiv element - Böyümə effekti */
+
+
+
+
+
+.reviewer-item.active .img-wrapper {
+  width: 100px;
+  height: 100px;
+  border-color: #e2b165;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.reviewer-info {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.reviewer-item.active .reviewer-info {
+  opacity: 1;
+}
+
+.reviewer-name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.reviewer-role {
+  margin: 0;
+  font-size: 15px;
+  color: #718096;
+  margin-top: 4px;
+}
+
+/* Sağ tərəf sitat bloku */
+.quote-block {
+  width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.quote-header {
+  margin-bottom: 20px;
+}
+
+.quote-icon {
+  opacity: 0.8;
+}
+
+.quote-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #2d3748;
+  font-weight: 500;
+  max-width: 550px;
+  margin-left: 20px;
+  margin-top: 40px;
+}

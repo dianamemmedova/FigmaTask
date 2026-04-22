@@ -1,0 +1,56 @@
+
+<section class="news-section">
+  <div class="news-container">
+
+    
+    <div class="news-block">
+      <div class="block-header">
+        <h2 class="block-title">Xəbərlər</h2>
+        <a href="#" class="see-all">Hamısına bax</a>
+      </div>
+
+      <div class="news-layout">
+        <div class="news-featured">
+          <div class="news-featured-img">
+            <img src="/xeberler.jpg" alt="featured news"
+                 onerror="this.src='https://placehold.co/380x220/e8e8e8/999?text=Xəbər'"/>
+          </div>
+          <p class="news-meta">
+            <span class="news-date">{{ featuredNews.date }}</span>
+            <span class="news-dot">•</span>
+            <span class="news-category">{{ featuredNews.category }}</span>
+          </p>
+          <h3 class="news-featured-title">{{ featuredNews.title }}</h3>
+          <p class="news-excerpt">{{ featuredNews.excerpt }}</p>
+        </div>
+
+        <div class="news-side">
+          <div class="news-card" *ngFor="let item of sideNews">
+            <img class="news-thumb"
+                 [src]="item.image" [alt]="item.title"
+                 onerror="this.src='https://placehold.co/80x70/e8e8e8/999?text=img'"/>
+            <div class="news-card-body">
+              <span class="news-date">{{ item.date }}</span>
+              <p class="news-card-title">{{ item.title }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="announcements-block">
+      <div class="block-header">
+        <h2 class="block-title">Elanlar</h2>
+        <a href="#" class="see-all">Hamısına bax</a>
+      </div>
+
+      <div class="announcement-list">
+        <div class="announcement-item" *ngFor="let ann of announcements">
+          <span class="ann-date">{{ ann.date }}</span>
+          <p class="ann-title">{{ ann.title }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

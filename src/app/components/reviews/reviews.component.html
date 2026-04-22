@@ -1,0 +1,45 @@
+<section class="reviews-section">
+  <div class="reviews-container">
+
+    <div class="reviews-header">
+      <h2 class="reviews-title">Rəylər</h2>
+      <p class="reviews-sub">
+        Rəsmi qonaqların və dövlət nümayəndələrinin layihə haqqında fikirləri
+      </p>
+    </div>
+
+    <div class="reviews-body">
+      <div class="reviewer-list">
+        <svg class="curve-svg" viewBox="0 0 150 500" preserveAspectRatio="none">
+          <path d="M0,50 Q180,250 0,450" fill="none" stroke="#e0e0e0" stroke-width="2" />
+        </svg>
+
+        <div *ngFor="let r of reviewers; let i = index" class="reviewer-item item-{{i}}"
+          [class.active]="i === activeIndex" (click)="setActive(i)">
+          <div class="img-wrapper">
+            <img [src]="r.image" [alt]="r.name" />
+          </div>
+          <div class="reviewer-info">
+            <h4 class="reviewer-name">{{ r.name }}</h4>
+            <p class="reviewer-role">{{ r.role }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-block">
+        <div class="quote-header">
+          <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M5.184 21.8674C3.584 21.8674 2.336 21.2914 1.44 20.1394C0.48 18.9874 0 17.4194 0 15.4354C0 12.4914 0.64 9.80343 1.92 7.37143C3.264 4.93943 5.408 2.66743 8.352 0.555429C9.12 -0.0205712 9.728 -0.148571 10.176 0.171428C10.432 0.36343 10.56 0.65143 10.56 1.03543C10.56 1.35543 10.336 1.67543 9.888 1.99543C7.712 3.85143 6.304 5.29143 5.664 6.31543C5.088 7.27543 4.8 8.29943 4.8 9.38743C4.8 10.5394 5.056 11.4354 5.568 12.0754C6.08 12.6514 6.656 13.1634 7.296 13.6114C7.936 13.9954 8.512 14.4754 9.024 15.0514C9.536 15.6274 9.792 16.4914 9.792 17.6434C9.792 18.7954 9.376 19.7874 8.544 20.6194C7.776 21.4514 6.656 21.8674 5.184 21.8674ZM19.584 21.8674C17.984 21.8674 16.704 21.2914 15.744 20.1394C14.848 18.9874 14.4 17.4194 14.4 15.4354C14.4 12.4914 15.04 9.80343 16.32 7.37143C17.664 4.93943 19.808 2.66743 22.752 0.555429C23.52 -0.0205712 24.128 -0.148571 24.576 0.171428C24.832 0.36343 24.96 0.65143 24.96 1.03543C24.96 1.35543 24.736 1.67543 24.288 1.99543C22.112 3.85143 20.704 5.29143 20.064 6.31543C19.488 7.27543 19.2 8.29943 19.2 9.38743C19.2 10.5394 19.456 11.4354 19.968 12.0754C20.48 12.6514 21.056 13.1634 21.696 13.6114C22.336 13.9954 22.912 14.4754 23.424 15.0514C23.936 15.6274 24.192 16.4914 24.192 17.6434C24.192 18.7954 23.776 19.7874 22.944 20.6194C22.176 21.4514 21.056 21.8674 19.584 21.8674Z"
+              fill="#DD9F51" />
+          </svg>
+
+
+        </div>
+        <p class="quote-text">
+          “{{ reviewers[activeIndex].quote }}”
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

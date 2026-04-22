@@ -1,0 +1,288 @@
+.reviews-section {
+  padding: 100px 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+.reviews-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.reviews-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.reviews-title::after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background: var(--color-yellow-light);
+  border-radius: 50%;
+  right: -15px;
+  top: -5px;
+  z-index: -1;
+}
+
+.reviews-sub {
+  color: var(--color-gray);
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.reviews-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.reviewer-list {
+  position: relative;
+  width: 50%;
+  height: 500px;
+}
+
+.curve-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 180px;
+  z-index: 0;
+}
+
+.reviewer-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item-0 { top: 15%; left: 30px; }
+.item-1 { top: 45%; left: 75px; }
+.item-2 { top: 75%; left: 20px; }
+
+.img-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid transparent;
+  transition: all 0.5s ease;
+  flex-shrink: 0;
+}
+
+.reviewer-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reviewer-item.active .img-wrapper {
+  width: 100px;
+  height: 100px;
+  border-color: var(--color-yellow);
+  box-shadow: 0 15px 30px var(--color-shadow);
+}
+
+.reviewer-info {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.reviewer-item.active .reviewer-info {
+  opacity: 1;
+}
+
+.reviewer-name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.reviewer-role {
+  margin: 0;
+  font-size: 15px;
+  color: var(--color-gray);
+  margin-top: 4px;
+}
+
+.quote-block {
+  width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.quote-header {
+  margin-bottom: 20px;
+}
+
+.quote-icon {
+  opacity: 0.8;
+}
+
+.quote-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-dark-bg);
+  font-weight: 500;
+  max-width: 550px;
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+@media (max-width: 1200px) {
+  .reviews-container {
+    padding: 0 15px;
+  }
+
+  .reviews-body {
+    gap: 40px;
+  }
+
+  .reviewer-list {
+    height: 450px;
+  }
+
+  .curve-svg {
+    width: 150px;
+  }
+
+  .item-0 { top: 15%; left: 25px; }
+  .item-1 { top: 45%; left: 60px; }
+  .item-2 { top: 75%; left: 15px; }
+}
+
+@media (max-width: 1024px) {
+  .reviews-section {
+    padding: 60px 0;
+  }
+
+  .reviews-header {
+    margin-bottom: 60px;
+  }
+
+  .reviews-body {
+    gap: 30px;
+  }
+
+  .quote-text {
+    font-size: 16px;
+  }
+
+  .reviewer-name {
+    font-size: 17px;
+  }
+
+  .reviewer-list {
+    height: 400px;
+  }
+
+  .curve-svg {
+    width: 130px;
+  }
+
+  .item-0 { top: 10%; left: 20px; }
+  .item-1 { top: 40%; left: 50px; }
+  .item-2 { top: 70%; left: 10px; }
+}
+
+@media (max-width: 768px) {
+  .reviews-body {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .reviewer-list {
+    width: 100%;
+    height: 360px;
+  }
+
+  .curve-svg {
+    width: 100px;
+  }
+
+  .item-0 { top: 15%; left: 30px; }
+  .item-1 { top: 45%; left: 75px; }
+  .item-2 { top: 75%; left: 20px; }
+
+  .quote-block {
+    width: 100%;
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .quote-text {
+    margin-left: 0;
+    margin-top: 16px;
+    max-width: 100%;
+  }
+
+  .reviews-title {
+    font-size: 28px;
+  }
+
+  .reviews-sub {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-section {
+    padding: 40px 0;
+  }
+
+  .reviewer-list {
+    height: 300px;
+  }
+
+  .curve-svg {
+    width: 80px;
+  }
+
+  .item-0 { top: 10%; left: 20px; }
+  .item-1 { top: 40%; left: 50px; }
+  .item-2 { top: 70%; left: 10px; }
+
+  .img-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .reviewer-item.active .img-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .reviewer-name {
+    font-size: 15px;
+  }
+
+  .reviewer-role {
+    font-size: 13px;
+  }
+
+  .quote-text {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,24 @@
+<section class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-title">
+      Təhsildə Zəfər Yolunuz:<br>
+      İnkişafın Rəqəmsal Mərkəzi
+    </h1>
+    <p class="hero-desc">
+      Uniser Training Center təqdim edir: Olimpiadalardan beynəlxalq mübadilə proqramlarına, onlayn təlimlərdən müəllim həmrəyliyinə qədər bütün imkanlar vahid platformada.
+    </p>
+    <button class="hero-btn">Ətraflı öyrən</button>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item" *ngFor="let stat of stats; let last = last">
+        <span class="stat-value">{{ stat.value }}</span>
+        <span class="stat-label">{{ stat.label }}</span>
+        <div class="stat-divider" *ngIf="!last"></div>
+      </div>
+    </div>
+  </div>
+</section>
